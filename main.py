@@ -2,7 +2,7 @@
 import time
 import socket
 import logging
-from logging.handlers import TimedRotatingFileHandler
+# from logging.handlers import 
 
 # ---------------------------
 # Configuration
@@ -30,7 +30,7 @@ LOG_FILENAME = "latency.log"
 # ---------------------------
 logger = logging.getLogger("LatencyLogger")
 logger.setLevel(logging.INFO)
-handler = TimedRotatingFileHandler(LOG_FILENAME, when="midnight", backupCount=7)
+handler = logging.FileHandler(LOG_FILENAME)
 # The formatter will add a timestamp automatically.
 formatter = logging.Formatter('%(asctime)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 handler.setFormatter(formatter)
